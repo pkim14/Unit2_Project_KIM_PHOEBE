@@ -1,0 +1,45 @@
+Design Document
+
+LinearEquation class
+
+Instance Variables:
+    private int x: this variable represents the x-coordinate (user input)
+    private int y: this variable represents the y-coordinate (user input)
+    private int x2: this variable represents the new x-coordinate (user input)
+    private int y2: this variable represents the new y-coordinate (calculated)
+
+Constructor
+    public LinearEquation(int x, int y, int x2, int y2)
+
+
+Methods
+    public String toString()
+        This method will display all relevant information the instance including:
+            - x and y coordinate information
+            - slope intercept form equation
+
+    public String Slope()
+        This method will calculate the slope of the linear equation using the two given x and y coordinates
+            - returns string with a fraction (a/b)
+            - uses (y2-y1)/(x2-x1)
+
+    public String Intercept()
+        This method will calculate the y-intercept of the linear equation using the two given x and y coordinates
+            - 
+    public double Distance()
+
+
+    public String NewX()
+
+
+
+
+
+
+
+
+EquationRunner.java
+
+Step 1: Ask user to enter first coordinate point
+Step 2: Ask user to enter second coordinate point
+Step 3: Create a new object using LinearEquation class

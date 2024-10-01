@@ -11,7 +11,6 @@ Instance Variables:
 Constructor
     public LinearEquation(int x, int y, int x2, int y2)
 
-
 Methods
     public String toString()
         This method will display all relevant information the instance including:
@@ -20,22 +19,21 @@ Methods
 
     public String Slope()
         This method will calculate the slope of the linear equation using the two given x and y coordinates
-            - returns string with a fraction (a/b)
+            - returns a string with a fraction (a/b)
             - uses (y2-y1)/(x2-x1)
 
     public String Intercept()
         This method will calculate the y-intercept of the linear equation using the two given x and y coordinates
-            - 
+            - returns a string with the fraction (a/b)
+
     public double Distance()
+        This method will calculate the distance between the two points using the distance equation
+            - uses √ (x₂ - x₁)² + (y₂ - y₁)²
+            - returns a double
 
-
-    public String NewX()
-
-
-
-
-
-
+    public String NewY()
+        This method calculates the y-coordinate of the new x-coordinate the user inputted
+            - inputs the x-coordinate into the linear equation to find the y-coordinate
 
 
 EquationRunner.java
@@ -43,3 +41,6 @@ EquationRunner.java
 Step 1: Ask user to enter first coordinate point
 Step 2: Ask user to enter second coordinate point
 Step 3: Create a new object using LinearEquation class
+Step 4: Run each method with the new object
+Step 5: Ask user to enter a new x-coordinate in order to calculate the value of the y-coordinate
+Step 6: Print the new coordinate

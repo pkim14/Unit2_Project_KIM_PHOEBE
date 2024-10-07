@@ -1,21 +1,22 @@
 import java.text.DecimalFormat;
 
 public class LinearEquation {
-    private int x;
-    private int y;
-    private int x2;
-    private int y2;
+    private double x;
+    private double y;
+    private double x2;
+    private double y2;
     private double slope, yIntercept;
-    private DecimalFormat df = new DecimalFormat("0.00");
+//    private DecimalFormat df = new DecimalFormat("0.00");
 
-    public LinearEquation(int x, int y, int x2, int y2) {
+    public LinearEquation(double x, double y, double x2, double y2) {
         this.x = x;
         this.y = y;
         this.x2 = x2;
         this.y2 = y2;
         this.slope = (y2 - y) / (x2 - x);
-        this.yIntercept = y - (slope * x);
+        this.yIntercept = Math.round((y - (slope * x) * 100)) / 100;
     }
+
 
     public String getEquation() {
         return "y = " + slope + "x + " + yIntercept;

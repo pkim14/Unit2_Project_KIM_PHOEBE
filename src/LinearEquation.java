@@ -24,18 +24,59 @@ public class LinearEquation {
 
 
     public String getEquation() {
-        String slopeString;
+            // Initialize slope as an empty string
+        String slopeString = "";
+        String yInterceptString = "";
 
         // Checks if the slope is an integer or a fraction
         if (slopeNum % slopeDen == 0){
-            // If divisible, it's an integer
-            slopeString = String.valueOf(slopeNum / slopeDen);
+            // When the slope is a whole #
+            int wholeSlope = slopeNum / slopeDen;
+            if (wholeSlope == 1) {
+                // Just returns x, when slope is 1
+                slopeString = "";
+            }
+            else if (wholeSlope == -1) {
+                slopeString = "-";
+            }
+            else {
+                slopeString = String.valueOf(wholeSlope);
+            }
         }
         else{
-            // If not divisible, keep it as s fraction
+            // If slope is a fraction, handle the negative & positive cases
+            if (slopeNum < 0) {
+                if(slopeDen < 0) {
+                    slopeNum = -slopeNum;
+                    // Avoid double negatives
+                    slopeDen = -slopeDen;
+                }
+            }
+            else if (slopeDen < 0) {
+                // Ensure only the numerator is negative
+                slopeNum = -slopeNum;
+                slopeDen = -slopeDen;
+            }
             slopeString = slopeNum + "/" + slopeDen;
         }
-        return "y = " + slopeString + "x + " + df.format(yIntercept);
+
+        if (yIntercept == 0) {
+            yInterceptString = "";
+        }
+        else if (yIntercept > 0) {
+            yInterceptString = " + " + df.format(yIntercept);
+        }
+        else {
+            yInterceptString = " - " + df.format(Math.abs(yIntercept));
+        }
+        if (slopeNum == 0 ) {
+            if (yIntercept == 0) {
+                return "y = 0";
+            }
+        return "y = " + df.format(yIntercept);
+
+        }
+        return "y = " + slopeString + "x + " + yInterceptString;
     }
 
     public double getDistance() {

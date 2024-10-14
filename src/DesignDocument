@@ -3,13 +3,14 @@ Design Document
 LinearEquation class
 
 Instance Variables:
-    private int x: this variable represents the x-coordinate (user input)
-    private int y: this variable represents the y-coordinate (user input)
+    private int x1: this variable represents the x-coordinate (user input)
+    private int y1: this variable represents the y-coordinate (user input)
     private int x2: this variable represents the new x-coordinate (user input)
     private int y2: this variable represents the new y-coordinate (calculated)
 
 Constructor
-    public LinearEquation(int x, int y, int x2, int y2)
+    public LinearEquation(int x1, int y1, int x2, int y2)
+        - initializes the x & y coordinates for the 2 points used in the linear equation
 
 Methods
     public String toString()
@@ -17,30 +18,31 @@ Methods
             - x and y coordinate information
             - slope intercept form equation
 
-    public String Slope()
+    public String slope()
         This method will calculate the slope of the linear equation using the two given x and y coordinates
             - returns a string with a fraction (a/b)
             - uses (y2-y1)/(x2-x1)
 
-    public String Intercept()
+    public String intercept()
         This method will calculate the y-intercept of the linear equation using the two given x and y coordinates
             - returns a string with the fraction (a/b)
+            - uses b = y1 - (slope * x1)
 
     public double Distance()
         This method will calculate the distance between the two points using the distance equation
             - uses √ (x₂ - x₁)² + (y₂ - y₁)²
             - returns a double
 
-    public String NewY()
+    public double calculateY(int newX)
         This method calculates the y-coordinate of the new x-coordinate the user inputted
             - inputs the x-coordinate into the linear equation to find the y-coordinate
 
 
 EquationRunner.java
 
-Step 1: Ask user to enter first coordinate point
-Step 2: Ask user to enter second coordinate point
+Step 1: Ask user to enter first coordinate point (x1, y1)
+Step 2: Ask user to enter second coordinate point (x2, y2)
 Step 3: Create a new object using LinearEquation class
 Step 4: Run each method with the new object
 Step 5: Ask user to enter a new x-coordinate in order to calculate the value of the y-coordinate
-Step 6: Print the new coordinate
+Step 6: Print the new (x, y) coordinate

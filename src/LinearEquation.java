@@ -19,7 +19,7 @@ public class LinearEquation {
         // Calculates slope as a fraction
         this.slopeNum = (int)(y2 - y1);
         this.slopeDen = (int)(x2 - x1);
-        this.yIntercept = Math.round((y1 - (getSlope() * x1) * 100.0)) / 100.0;
+        this.yIntercept = Math.round((y1 - (getSlope() * x1)) * 100.0) / 100.0;
     }
 
 
